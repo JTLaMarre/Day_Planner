@@ -48,7 +48,10 @@ $.each(hours, function(index,value){
     div.text(value)
     div.appendTo('.container')
 })
-
+// retrieves current hour in 24hour time
+var now = new Date($.now());
+var currentHour = now.getHours();
+// ...
 
 
 // end of doc ready wrapper
