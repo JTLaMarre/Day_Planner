@@ -37,22 +37,46 @@
 <script>
   // funciton to wrap script in 
 $(document).ready(function () {
+// retrieves current hour in 24hour time
+var now = new Date($.now());
+var currentHour = now.getHours();
+// ...
+
 // hours of the day
 var hours = ["9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm"]
 
 // create divs for the hours
 
 $.each(hours, function(index,value){
+  var timeBlock = $('<div>')
+    timeBlock.addClass('row time-block')
+    timeBlock.appendTo('.container')
+    
   var div = $('<div>')
-    div.addClass('row hour time-block')
+    div.addClass('hour time-block col-md-1')
+    div.attr('data-hour',9+index)
     div.text(value)
-    div.appendTo('.container')
-})
-// retrieves current hour in 24hour time
-var now = new Date($.now());
-var currentHour = now.getHours();
-// ...
+    div.appendTo(timeBlock)
 
+var textarea = $('<textarea>')
+  textarea.addClass('col-md-10 description')
+  textarea.appendTo(timeBlock)
+
+  var saveButton = $('<button>')
+    saveButton.addClass('btn saveBtn col-md-1')
+    saveButton.appendTo(timeBlock)
+})
+// function to find the current hour
+
+function findCurrentHour(){
+// loop through hours
+
+
+  }
+  
+
+  
+findCurrentHour();
 
 // end of doc ready wrapper
 })
