@@ -59,8 +59,11 @@
         saveButton.addClass('btn saveBtn col-md-1')
         saveButton.appendTo(timeBlock)
       })
+      // interval to check current hour every minute. 
+      var checkhourInterval = setInterval(function() { 
+        // consloe.log(testinteval)
+\        findCurrentHour();},60000)
       // function to find the current hour
-
       function findCurrentHour() {
         // loop through hours
         $(".hour").each(function (index) {
